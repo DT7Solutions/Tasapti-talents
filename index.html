@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edukon</title>
+    <link rel="shortcut icon" href="assets/images/x-icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/icofont.min.css">
+    <link rel="stylesheet" href="assets/css/swiper.min.css">
+    <link rel="stylesheet" href="assets/css/lightcase.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- preloader ending here -->
+
+
+    <!-- scrollToTop start here -->
+    <a href="#" class="scrollToTop"><i class="icofont-rounded-up"></i></a>
+    <!-- scrollToTop ending here -->
+
+
+    
+    <!-- Map & address us Section Section Starts Here -->
+    <div class="map-address-section padding-tb section-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-5">
+                    <div class="pageheader-content text-center">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo/logo-final.png" alt="logo"></a>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Get in touch with us</span>
+                <h2 class="title">We're Always Eager To Hear From You!</h2>
+            </div>
+            <div class="section-wrapper">
+                <div class="row flex-row-reverse">
+                    <div class="col-xl-4 col-lg-5 col-12">
+                        <div class="contact-wrapper">
+                            <div class="contact-item">
+                                <div class="contact-thumb">
+                                    <img src="assets/images/icon/01.png" alt="CodexCoder">
+                                </div>
+                                <div class="contact-content">
+                                    <h6 class="title">Office Address</h6>
+                                    <p>1201 park street, Fifth Avenue</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-thumb">
+                                    <img src="assets/images/icon/02.png" alt="CodexCoder">
+                                </div>
+                                <div class="contact-content">
+                                    <h6 class="title">Phone number</h6>
+                                    <p>+22698 745 632,02 982 745</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-thumb">
+                                    <img src="assets/images/icon/03.png" alt="CodexCoder">
+                                </div>
+                                <div class="contact-content">
+                                    <h6 class="title">Send email </h6>
+                                    <a href="mailto:info@gmail.com">admin@gmil.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-thumb">
+                                    <img src="assets/images/icon/04.png" alt="CodexCoder">
+                                </div>
+                                <div class="contact-content">
+                                    <h6 class="title">Our website</h6>
+                                    <a href="#">www.admin.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-7 col-12 mt-4">
+                        <div class="section-wrapper">
+                            <form class="contact-form" id="contact-form" method="POST">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Name" id="name" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Phone no" id="phone" name="phone" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" placeholder="Subject" id="subject" name="subject" required>
+                                </div>
+                                <div class="form-group w-100">
+                                    <textarea name="message" rows="8" id="message" placeholder="Your Message" required></textarea>
+                                </div>
+                                <div class="form-group w-100 text-center">
+                                    <button class="lab-btn" onclick="sendMail()" type="submit"><span>Send our Message</span></button>
+                                </div>
+                            </form>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Map & address us Section Section Ends Here -->
+
+
+
+    <!-- footer -->
+    <div class="news-footer-wrap">
+        <div class="fs-shape">
+            <img src="assets/images/shape-img/03.png" alt="fst" class="fst-1">
+            <img src="assets/images/shape-img/04.png" alt="fst" class="fst-2">
+        </div>
+      
+
+      
+    </div>
+    <!-- footer -->
+
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+  emailjs.init("wyr_afMyWdm4mVKpO");
+})();
+</script>
+
+<script>
+function sendMail() {
+var params = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+Phone: document.getElementById("phone").value,
+subject: document.getElementById("subject").value,
+message: document.getElementById("message").value,
+};
+
+const serviceID = "service_v3ydx9z";
+const templateID = "template_sjorv39";
+
+emailjs.send(serviceID, templateID, params)
+.then(res=>{
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+    console.log(res);
+    alert("Your message sent successfully!!")
+
+})
+.catch(err=>console.log(err));
+
+}
+</script>
+
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/swiper.min.js"></script>
+    <script src="assets/js/progress.js"></script>
+    <script src="assets/js/lightcase.js"></script>
+    <script src="assets/js/counter-up.js"></script>
+    <script src="assets/js/isotope.pkgd.js"></script>
+    <script src="assets/js/functions.js"></script>
+</body>
+</html>
